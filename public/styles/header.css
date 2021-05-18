@@ -1,0 +1,19 @@
+header {
+  height: 400px;
+  width: 100vw;
+  background-color: #f79400;
+  background-image: url("https://www.transparenttextures.com/patterns/crossword.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+
+.profilepic {
+  display: flex;
+  justify-content: center;
+}
+
+.profilename {
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+}

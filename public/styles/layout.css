@@ -11,13 +11,26 @@ html {
 }
 
 /*
- * Global layout stuff
- */
+* Global layout stuff
+*/
 
 body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+
+.container {
+  background-color: #f4f1ec;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
 }
 
 /*
