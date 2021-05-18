@@ -1,6 +1,7 @@
 .new-tweet {
   font-weight: bold;
   width: 50%;
+  padding: 20px;
 }
 
 textarea {
