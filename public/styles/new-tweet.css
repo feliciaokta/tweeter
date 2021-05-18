@@ -25,14 +25,16 @@ textarea {
 }
 
 .buttonAndCounter {
+  display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .tweetButton {
   background-color: #4056A1;
   color: #FFFFFF;
   font-family: 'Bungee', cursive;
-  padding: 2%;
+  padding: 4px;
   width: 120px;
   border: none;
   text-align: center;

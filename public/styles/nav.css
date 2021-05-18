@@ -16,6 +16,13 @@ nav span {
   align-items: flex-end;
 }
 
+.writeNew {
+  line-height: 0px;
+  align-items: flex-end;
+  margin-bottom: 20px;
+  margin-top: 8%;
+}
+
 .arrow {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 100%;
