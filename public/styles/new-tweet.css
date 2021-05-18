@@ -5,6 +5,8 @@
 }
 
 textarea {
+  resize: none;
+  margin-top: 10px;
   width: 100%;
   height: 35px;
   border-top-style: hidden;
@@ -44,4 +46,5 @@ textarea {
   font-family: 'Bungee', cursive;
   display: flex;
   justify-content: flex-end;
+  /* turn red when below 0 */
 }
