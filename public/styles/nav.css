@@ -24,9 +24,10 @@ nav span {
 }
 
 /* sticky class from client.js */
-.sticky + .content {
-  padding-top: 102px;
-}
+/* add top padding to prevent sudden quick movement, but this pushes the header down */
+/* .sticky + header {
+  padding-top: 120px;
+} */
 
 .writeNew {
   line-height: 0px;
