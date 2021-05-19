@@ -70,14 +70,6 @@ $(document).ready(() => {
     }
   ]
 
-  const renderTweets = function(tweets) {
-    // loops through tweets
-    // calls createTweetElement for each tweet
-    // takes return value and appends it to the tweets container
-
-    
-
-  }
 
   // makes a jQuery object out of html tweet post
   const createTweetElement = function(tweetObject) {
@@ -104,9 +96,21 @@ $(document).ready(() => {
     return $tweet;
   }
 
-  console.log(createTweetElement(testTweet));
-  // console.log($tweet); // to see what it looks like
-  $('#tweets-container').prepend(createTweetElement(testTweet)); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+  
+  const renderTweets = function(tweets) {
+    // loops through tweets
+    // calls createTweetElement for each tweet
+    // takes return value and appends it to the tweets container
 
+    let tweetPost = "";
+
+    for (let obj of data) {
+      tweetPost = $('#tweets-container').prepend(createTweetElement(obj));
+    };
+    
+    return tweetPost;
+  }
+
+  renderTweets(data);
 
 });
