@@ -38,14 +38,16 @@
     <!-- Character counter -->
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 
+    <!-- timeago for timestamp of post -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
   
   </head>
 
   <body>
-    <nav>
-      <!-- Top nav bar in nav.css -->
+    <!-- Top nav bar in nav.css -->
+    <nav class="navBar">
       <span>tweeter</span>
-        <div class="arrow">
+        <div class="topRight">
           <p class="writeNew"><strong>Write </strong> a new tweet</p>
           <i class="fas fa-angle-double-down"></i>
         </div>
@@ -68,6 +70,7 @@
     <main class="container">
         
       <!-- section in new-tweet.css -->
+      <!-- contains form, tweet button, char counter -->
       <section class="new-tweet">
         
         <form method="POST" action="/tweets">
@@ -81,6 +84,7 @@
         </form>
           
         <!-- this is in tweet-post.css -->
+        <!-- contains username, tweet, timestamp posted, 3 icons -->
           <article>
             <div class="username">
               <h2>Rhoda Jacobs</h2>
@@ -88,7 +92,8 @@
             </div>
               <p>Hello World! Lorem ipsum dolor sit amet</p>
               <hr class="line">
-            <footer>10 days ago
+              <!-- timestamp of tweet posted -->
+            <footer><span class="timePosted"></span>
               <div class="footerButtons">
                 <i class="fas fa-flag"></i>
                 <i class="fas fa-retweet"></i>
