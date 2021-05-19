@@ -12,5 +12,17 @@ $( document ).ready(function() {
   // stick the navbar on top
   window.onscroll = function() {myFunction()};
   
+  const header = document.getElementById("navBar");
+
+  const sticky = header.offsetTop;  // where you want the header to stay when you scroll
+
+  // make the header stay on top (const sticky) when 
+  function myFunction() {
+    if (window.pageYOffset > sticky) {
+      header.classList.add("sticky");
+    } else {
+      header.classList.remove("sticky");
+    }
+  }
 
 });
