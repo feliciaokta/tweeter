@@ -85,17 +85,19 @@
           
         <!-- this is in tweet-post.css -->
         <!-- contains username, tweet, timestamp posted, 3 icons -->
-          <article>
-            <div class="username">
-              <div class="usernamePhoto">
+        <article id="tweets-container">  
+          <article class="tweetBox">
+            <div class="userTop">
+              <div class="usernameWithPhoto">
                 <i class="far fa-user-circle"></i>
                 <h2>Rhoda Jacobs</h2>
               </div>
               <h3>@RhodaJacobs</h3>
             </div>
+              <!-- ajax in client.js -->
               <p>Hello World! Lorem ipsum dolor sit amet</p>
               <hr class="line">
-              <!-- timestamp of tweet posted -->
+              <!-- timestamp of tweet posted, in client.js -->
             <footer><span class="timePosted"></span>
               <div class="footerButtons">
                 <i class="fas fa-flag"></i>
@@ -104,6 +106,7 @@
               </div>
             </footer>
           </article>
+        </article>
         
       </section>
 

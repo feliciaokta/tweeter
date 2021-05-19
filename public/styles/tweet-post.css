@@ -1,5 +1,13 @@
-article {
+#tweets-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+.tweetBox {
   border: 2px solid;
+  margin-bottom: 20px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -7,14 +15,14 @@ article {
   font-weight: 300;
 }
 
-article:hover {
-  box-shadow: 10px 10px #dce4fa;
+.tweetBox:hover {
+  box-shadow: 10px 10px #c8d5fa;
 }
 
 /* line config is in new-tweet */
 
 
-.username {
+.userTop {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -29,7 +37,7 @@ article:hover {
   padding-right: 14px;
 }
 
-.usernamePhoto {
+.usernameWithPhoto {
   display: flex;
   justify-content: center;
 }

@@ -26,13 +26,13 @@ nav span {
 /* sticky class from client.js */
 /* add top padding to prevent sudden quick movement, but this pushes the header down */
 /* .sticky + header {
-  padding-top: 120px;
+  margin-top: 160px;
 } */
 
 .writeNew {
   line-height: 0px;
   margin-bottom: 20px;
-  margin-top: 5%;
+  margin-top: 14px;
   font-size: 100%;
   font-family: 'Source Sans Pro', sans-serif;
 }
