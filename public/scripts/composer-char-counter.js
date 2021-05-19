@@ -4,7 +4,7 @@ $( document ).ready(function() {
     let charLength = char.length;
     $(".counter").text(140 - charLength);
 
-    (140 - charLength < 0) ? $(".counter").css("color", "red") : $(".counter").css("color", "#4056A1");
+    (140 - charLength < 0) ? $(".counter").css("color", "red") : $(".counter").css("color", "#545149");
 
   });
 });

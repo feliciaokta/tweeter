@@ -1,0 +1,40 @@
+article {
+  border: 2px solid;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px;
+  font-weight: normal;
+}
+
+/* line config is in new-tweet */
+
+
+.username {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h2 {
+  margin: 0px;
+}
+
+h3 {
+  margin: 0px;
+  color: #cccdcf;
+}
+
+footer {
+  font-size: medium;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footerButtons {
+  display: flex;
+  justify-content: space-between;
+  width: 80px;
+  padding-right: 10px;
+}
