@@ -7,10 +7,6 @@
 
 $(document).ready(() => {
 
-  // update the timestamp of posted tweet
-  $(".timePosted").text(timeago.format(new Date()));
-
-
 
   // stick the navbar on top
   window.onscroll = function() {myFunction()};
@@ -27,48 +23,7 @@ $(document).ready(() => {
       header.classList.remove("sticky");
     }
   }
-  
 
-  // real-time tweet posts
-
-  // sample object I have to make:
-  const testTweet = {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png",
-          "handle": "@SirIsaac"
-        },
-      "content": {
-          "text": "If I have seen further it is by standing on the shoulders of giants"
-        },
-      "created_at": 1461116232227
-  }
-
-
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ]
 
 
   // makes a jQuery object out of html tweet post
@@ -84,7 +39,7 @@ $(document).ready(() => {
         </div>
           <p>${tweetObject.content.text}</p>
           <hr class="line">
-        <footer><span class="timePosted">${tweetObject.created_at}</span>
+        <footer><span class="timePosted">${timeago.format(tweetObject.created_at)}</span>
           <div class="footerButtons">
             <i class="fas fa-flag"></i>
             <i class="fas fa-retweet"></i>
@@ -104,18 +59,16 @@ $(document).ready(() => {
 
     let tweetPost = "";
 
-    for (let obj of data) {
+    for (let obj of tweets) {
       tweetPost = $('#tweets-container').prepend(createTweetElement(obj));
     };
     
     return tweetPost;
   }
 
-  renderTweets(data);
 
 
-
-  // AJAX POST request with jQuery
+  // AJAX POST request to get new tweets into database with jQuery AJAX
   $(".tweetForm").submit((event) => {
     event.preventDefault();
     const tweetSend = $("#tweet-text");
@@ -124,5 +77,16 @@ $(document).ready(() => {
 
   })
 
+
+
+  // Fetch posted tweets and display them on the website with Ajax
+  const loadTweets = () => {
+    $.ajax({url: "/tweets", method: "get"})
+    .then((allTweets) => {
+      renderTweets(allTweets);
+    })
+  };
+
+  loadTweets();
 
 });
