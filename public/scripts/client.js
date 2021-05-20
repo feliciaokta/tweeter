@@ -96,7 +96,7 @@ $(document).ready(() => {
     return $tweet;
   }
 
-  
+
   const renderTweets = function(tweets) {
     // loops through tweets
     // calls createTweetElement for each tweet
@@ -112,5 +112,17 @@ $(document).ready(() => {
   }
 
   renderTweets(data);
+
+
+
+  // AJAX POST request with jQuery
+  $(".tweetForm").submit((event) => {
+    event.preventDefault();
+    const tweetSend = $("#tweet-text");
+
+    $.ajax({url: "/tweets", method: "post", data: $(tweetSend).serialize()})
+
+  })
+
 
 });
