@@ -43,6 +43,7 @@ nav span {
   align-items: center;
 }
 
+/* add animation "bounce" */
 .fa-angle-double-down {
   color: red;
 }

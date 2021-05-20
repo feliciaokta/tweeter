@@ -25,7 +25,7 @@ $(document).ready(() => {
   }
 
 
-
+  // database structure
   // makes a jQuery object out of html tweet post
   const createTweetElement = function(tweetObject) {
     const $tweet = $(`
@@ -35,7 +35,7 @@ $(document).ready(() => {
             <img src="${tweetObject.user.avatars}">
             <h2>${tweetObject.user.name}</h2>
           </div>
-            <h3>${tweetObject.user.handle}</h3>
+          <h3>${tweetObject.user.handle}</h3>
         </div>
           <p>${tweetObject.content.text}</p>
           <hr class="line">
@@ -67,13 +67,13 @@ $(document).ready(() => {
   }
 
 
-
+  // "TWEET" button route
   // AJAX POST request to get new tweets into database with jQuery AJAX
   $(".tweetForm").submit((event) => {
     event.preventDefault();
     const tweetSend = $("#tweet-text");
     
-    console.log("tweetSend: ", tweetSend);
+
 
     if (!$(tweetSend).val()) {
       alert("Cannot post empty tweet");
@@ -81,13 +81,17 @@ $(document).ready(() => {
       alert("Tweet too long");
     } else {
       $.ajax({url: "/tweets", method: "post", data: $(tweetSend).serialize()})
+      .then(() => {
+        loadTweets();
+        $(tweetSend).val("");
+      })
     }
 
   })
 
 
 
-  // Fetch posted tweets and display them on the website with Ajax
+  // Fetch posted tweets from the database and display them on the website with Ajax
   const loadTweets = () => {
     $.ajax({url: "/tweets", method: "get"})
     .then((allTweets) => {
