@@ -33,7 +33,7 @@ $(document).ready(() => {
         <div class="userTop">
           <div class="usernameWithPhoto">
             <img src="${tweetObject.user.avatars}">
-            <h2>${tweetObject.user.name}</h2>
+            <h2 class="usernameObject">${tweetObject.user.name}</h2>
           </div>
           <h3>${tweetObject.user.handle}</h3>
         </div>
