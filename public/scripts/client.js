@@ -72,8 +72,16 @@ $(document).ready(() => {
   $(".tweetForm").submit((event) => {
     event.preventDefault();
     const tweetSend = $("#tweet-text");
+    
+    console.log("tweetSend: ", tweetSend);
 
-    $.ajax({url: "/tweets", method: "post", data: $(tweetSend).serialize()})
+    if (!$(tweetSend).val()) {
+      alert("Cannot post empty tweet");
+    } else if ($(tweetSend).val().length > 140) {
+      alert("Tweet too long");
+    } else {
+      $.ajax({url: "/tweets", method: "post", data: $(tweetSend).serialize()})
+    }
 
   })
 
@@ -88,5 +96,6 @@ $(document).ready(() => {
   };
 
   loadTweets();
+
 
 });
