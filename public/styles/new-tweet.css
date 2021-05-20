@@ -4,6 +4,20 @@
   padding-top: 20px;
 }
 
+.emptyTweet {
+  display: none;
+  border-style: solid;
+  padding: 2%;
+  color: red;
+}
+
+.tooLong {
+  display: none;
+  border-style: solid;
+  padding: 2%;
+  color: red;
+}
+
 form {
   margin-top: 40px;
   margin-bottom: 60px;
@@ -20,7 +34,7 @@ textarea {
   border-bottom-style: hidden;
   background-color: #f4f1ec;
   font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .line {

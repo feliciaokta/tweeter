@@ -29,25 +29,26 @@ $(document).ready(() => {
   // makes a jQuery object out of html tweet post
   const createTweetElement = function(tweetObject) {
     const $tweet = $(`
-      <article class="tweetBox"> 
-        <div class="userTop">
-          <div class="usernameWithPhoto">
-            <img src="${tweetObject.user.avatars}">
-            <h2 class="usernameObject">${tweetObject.user.name}</h2>
+        <article class="tweetBox"> 
+          <div class="userTop">
+            <div class="usernameWithPhoto">
+              <img src="${tweetObject.user.avatars}">
+              <h2 class="usernameObject">${tweetObject.user.name}</h2>
+            </div>
+            <h3>${tweetObject.user.handle}</h3>
           </div>
-          <h3>${tweetObject.user.handle}</h3>
-        </div>
-          <p>${tweetObject.content.text}</p>
-          <hr class="line">
-        <footer><span class="timePosted">${timeago.format(tweetObject.created_at)}</span>
-          <div class="footerButtons">
-            <i class="fas fa-flag"></i>
-            <i class="fas fa-retweet"></i>
-            <i class="fas fa-heart"></i>
-          </div>
-        </footer>
-      </article>
+            <p class="post">${tweetObject.content.text}</p>
+            <hr class="line">
+          <footer><span class="timePosted">${timeago.format(tweetObject.created_at)}</span>
+            <div class="footerButtons">
+              <i class="fas fa-flag"></i>
+              <i class="fas fa-retweet"></i>
+              <i class="fas fa-heart"></i>
+            </div>
+          </footer>
+        </article>
     `)
+    $tweet.find("p.post").text(tweetObject.content.text);
     return $tweet;
   }
 
@@ -72,15 +73,29 @@ $(document).ready(() => {
   $(".tweetForm").submit((event) => {
     event.preventDefault();
     const tweetSend = $("#tweet-text");
-    
 
+    const delay = 350;
 
     if (!$(tweetSend).val()) {
-      alert("Cannot post empty tweet");
-    } else if ($(tweetSend).val().length > 140) {
-      alert("Tweet too long");
-    } else {
+      $.ajax({url: "/tweets", method: "get"})
+      .then(() => {
+        $(".emptyTweet").slideDown(delay).css("display", "block");
+      })
+    }
+    
+    else if ($(tweetSend).val().length > 140) {
+      $.ajax({url: "/tweets", method: "get"})
+      .then(() => {
+        $(".tooLong").slideDown(delay).css("display", "block");
+      })
+    }
+    
+    else {
       $.ajax({url: "/tweets", method: "post", data: $(tweetSend).serialize()})
+      .then(() => {
+        $(".emptyTweet").hide();
+        $(".tooLong").hide();
+      })
       .then(() => {
         loadTweets();
         $(tweetSend).val("");

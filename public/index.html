@@ -73,6 +73,11 @@
       <!-- contains form, tweet button, char counter -->
       <section class="new-tweet">
         
+        <div>
+          <p class="emptyTweet">Cannot post empty tweet</p>
+          <p class="tooLong">Tweet too long</p>
+        </div>
+
         <form method="POST" action="/tweets" class="tweetForm">
             <label for="tweet-text">What are you humming about?</label>
             <textarea name="text" id="tweet-text" class="tweet-text"></textarea>
