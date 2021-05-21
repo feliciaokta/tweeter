@@ -4,6 +4,9 @@
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
+    <!-- prevent zooming in on phones -->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+
     <!-- Fontawesome nav span arrow -->
     <script src="https://kit.fontawesome.com/4ec77c7bd2.js" crossorigin="anonymous"></script>
 
@@ -53,51 +56,53 @@
         </div>
     </nav>
 
-    <!-- header.css -->
-    <header>
-      <div class="profilepic">
-          <img src="/images/profile-hex.png"> 
-      </div>
-      <br>
-      <div class="profilename">
-        <h2>Acacia Kovacs</h2>
-      </div>
-    </header>
+    <div class="headerAndMain">
 
-    <!-- Page-specific (main) content here -->
-    
-    <!-- container in layout.css -->
-    <main class="container">
-        
-      <!-- section in new-tweet.css -->
-      <!-- contains form, tweet button, char counter -->
-      <section class="new-tweet">
-        
-        <div>
-          <p class="emptyTweet">Cannot post empty tweet</p>
-          <p class="tooLong">Tweet too long</p>
+      <!-- header.css -->
+      <header>
+        <div class="profilepic">
+            <img src="/images/profile-hex.png"> 
         </div>
+        <br>
+        <div class="profilename">
+          <h2>Acacia Kovacs</h2>
+        </div>
+      </header>
 
-        <form method="POST" action="/tweets" class="tweetForm">
-            <label for="tweet-text">What are you humming about?</label>
-            <textarea name="text" id="tweet-text" class="tweet-text"></textarea>
-            <hr class="line">
-          <div class="buttonAndCounter">
-              <button type="submit" class="tweetButton">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
-        </form>
+      <!-- Page-specific (main) content here -->
+      
+      <!-- container in layout.css -->
+      <main class="container">
           
-        <!-- this is in tweet-post.css -->
-        <!-- contains username, tweet, timestamp posted, 3 icons -->
-        <article id="tweets-container">  
-          <!-- functions with jQuery and AJAX in client.js -->
-        </article>
-        
-      </section>
+        <!-- section in new-tweet.css -->
+        <!-- contains form, tweet button, char counter -->
+        <section class="new-tweet">
+          
+          <div>
+            <p class="emptyTweet">Cannot post empty tweet</p>
+            <p class="tooLong">Tweet too long</p>
+          </div>
 
+          <form method="POST" action="/tweets" class="tweetForm">
+              <label for="tweet-text">What are you humming about?</label>
+              <textarea name="text" id="tweet-text" class="tweet-text"></textarea>
+              <hr class="line">
+            <div class="buttonAndCounter">
+                <button type="submit" class="tweetButton">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+            
+          <!-- this is in tweet-post.css -->
+          <!-- contains username, tweet, timestamp posted, 3 icons -->
+          <article id="tweets-container">  
+            <!-- functions with jQuery and AJAX in client.js -->
+          </article>
+          
+        </section>
 
-    </main>
+      </main>
 
+    </div>
   </body>
 </html>

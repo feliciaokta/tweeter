@@ -1,6 +1,6 @@
 .new-tweet {
   font-weight: bold;
-  width: 50%;
+  width: 70%;
   padding-top: 20px;
 }
 
@@ -65,4 +65,13 @@ textarea {
   font-family: 'Bungee', cursive;
   display: flex;
   justify-content: flex-end;
+}
+
+
+@media only screen and (max-width: 770px) {
+
+  .new-tweet {
+    width: 95%;
+  }
+
 }

@@ -1,5 +1,7 @@
 header {
-  width: 100vw;
+  width: 33.3%;
+  height: 50%;
+  margin: 4%;
   background-color: #f79400;
   background-image: url("https://www.transparenttextures.com/patterns/crossword.png");
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */

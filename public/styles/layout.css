@@ -3,7 +3,9 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
-html {
+
+
+ html {
   box-sizing: border-box;
 }
 *, *:before, *:after {
@@ -21,7 +23,12 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+.headerAndMain {
+  display: flex;
+  flex-direction: row;
+}
 
+/* header config in header.css */
 
 .container {
   background-color: #f4f1ec;
@@ -36,3 +43,17 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+  /* Tablet: minimum width of 768px to maximum width of 1024px */
+  @media only screen and (max-width: 770px) {
+    .headerAndMain {
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      width: 100%;
+      margin: 0%;
+    }
+
+  }
