@@ -2,8 +2,10 @@
 
 Tweeter is a simple, single-page, AJAX-based Twitter clone. This project uses jQuery, HTML5, and CSS3.
 
+This is what it looks like on a PC:
 !["Screenshot of PC view"](https://github.com/feliciaokta/tweeter/blob/master/Screenshots/TweeterPC.png?raw=true)
 
+This is what it looks like on a tablet:
 !["Screenshot of tablet view"](https://github.com/feliciaokta/tweeter/blob/master/Screenshots/TweeterTablet.png?raw=true)
 
 ## Getting Started
