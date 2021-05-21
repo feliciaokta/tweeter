@@ -52,7 +52,9 @@
       <span>tweeter</span>
         <div class="topRight">
           <p class="writeNew"><strong>Write </strong> a new tweet</p>
-          <i class="fas fa-angle-double-down"></i>
+          <button class="composeTweet">
+            <i class="fas fa-angle-double-down bounce-1"></i>
+          </button>
         </div>
     </nav>
 
@@ -84,9 +86,10 @@
           </div>
           
           <!-- form, tweet button, char counter -->
+          <!-- composer-char-counter.js -->
           <form method="POST" action="/tweets" class="tweetForm">
-              <label for="tweet-text">What are you humming about?</label>
-              <textarea name="text" id="tweet-text" class="tweet-text"></textarea>
+              <!-- <label for="tweet-text">What are you humming about?</label> -->
+              <textarea name="text" id="tweet-text" class="tweet-text" placeholder="What are you humming about?"></textarea>
               <hr class="line">
             <div class="buttonAndCounter">
                 <button type="submit" class="tweetButton">Tweet</button>

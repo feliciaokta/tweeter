@@ -44,7 +44,7 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
-  /* Tablet: minimum width of 768px to maximum width of 1024px */
+  /* Tablet */
   @media only screen and (max-width: 770px) {
     .headerAndMain {
       display: flex;

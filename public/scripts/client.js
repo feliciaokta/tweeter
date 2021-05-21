@@ -15,7 +15,7 @@ $(document).ready(() => {
 
   const sticky = header.offsetTop;  // where you want the header to stay when you scroll
 
-  // make the header stay on top (const sticky) when 
+  // make the header stay on top (const sticky) when scrolled down
   function myFunction() {
     if (window.pageYOffset > sticky) {
       header.classList.add("sticky");
@@ -23,6 +23,10 @@ $(document).ready(() => {
       header.classList.remove("sticky");
     }
   }
+
+
+  // compose tweet button click event listener
+  
 
 
   // database structure
@@ -76,16 +80,20 @@ $(document).ready(() => {
 
     const delay = 350;
 
+    // do not post if tweet is empty
     if (!$(tweetSend).val()) {
       $.ajax({url: "/tweets", method: "get"})
       .then(() => {
+        $(".tooLong").hide();
         $(".emptyTweet").slideDown(delay).css("display", "block");
       })
     }
     
+    // do not post if tweet length is > 140
     else if ($(tweetSend).val().length > 140) {
       $.ajax({url: "/tweets", method: "get"})
       .then(() => {
+        $(".emptyTweet").hide();
         $(".tooLong").slideDown(delay).css("display", "block");
       })
     }

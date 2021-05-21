@@ -43,8 +43,26 @@ nav span {
   align-items: center;
 }
 
+.composeTweet {
+  border: none;
+  background-color: #4056A1;
+}
+
+
 /* add animation "bounce" */
 .fa-angle-double-down {
   color: red;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
 }
 
+.bounce-1 {
+  animation-name: bounce-1;
+  animation-timing-function: ease;
+}
+
+@keyframes bounce-1 {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
