@@ -41,7 +41,7 @@ $(document).ready(() => {
             </div>
             <h3>${tweetObject.user.handle}</h3>
           </div>
-            <p class="post">${tweetObject.content.text}</p>
+            <p class="post">${escape(tweetObject.content.text)}</p>
             <hr class="line">
           <footer><span class="timePosted">${timeago.format(tweetObject.created_at)}</span>
             <div class="footerButtons">
